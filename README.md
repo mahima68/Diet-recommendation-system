@@ -80,7 +80,3 @@ Tests cover the original vegan-profile regression, every dietary category across
 - `Food_and_Nutrition__.csv`: original dataset.
 - `original_notebook.ipynb`: original notebook retained for reference.
 - `test_recommender.py`: automated regression tests.
-
-## Next improvements
-
-Document and verify the dataset source and units; add structured ingredients and allergens; obtain nutrition review; evaluate recommendation relevance with independent feedback; then add a web interface.
