@@ -1,6 +1,32 @@
 # Diet Recommendation System
 
-A Python portfolio project that retrieves complete breakfast, lunch, dinner, and snack plans from a supplied dataset. Includes an interactive terminal interface, notebook, reusable recommendation module, portable saved artifact, and automated tests.
+A Python portfolio project that retrieves complete breakfast, lunch, dinner, and snack plans from a supplied dataset. Includes a responsive browser interface, interactive terminal interface, notebook, reusable recommendation module, portable saved artifact, and automated tests.
+
+## Website — Nourish
+
+[Open the hosted website](https://mahima-diet-planner.mahajanmahima06.chatgpt.site).
+
+The hosted site is currently private to the owner and requires ChatGPT sign-in; it is not yet a public portfolio demo.
+
+The browser form accepts age, weight, activity level and dietary preference, with optional calorie targets, calorie tolerance and a dataset condition label. It displays up to five distinct meal plans, includes a sample profile, and exports results as CSV. Profile inputs are processed in the browser and are not saved by the app.
+
+To run the website locally, serve the static files from the repository root:
+
+```sh
+python -m http.server 8000 --directory website
+```
+
+Then open http://localhost:8000 in a browser. Opening the HTML directly as a file will not load the model correctly.
+
+The website uses a JavaScript port of the Python retrieval logic and a JSON snapshot of the supplied dataset and fitted preprocessing. Twelve representative profiles were checked against Python, covering all four preferences, calorie filtering, condition labels and empty results. The web form does not expose the Python API's nutrient limits or custom result count.
+
+To refresh the browser's model after changing the dataset, run from the repository root after installing the Python requirements:
+
+```sh
+python -c 'from recommender import DietRecommender; DietRecommender.from_csv().save("website/model.json")'
+```
+
+The dataset limitations below also apply to the website. It is an educational demo, not a clinically validated diet planner.
 
 ## Quick start
 
@@ -72,6 +98,8 @@ python -m unittest -v
 Tests cover the original vegan-profile regression, every dietary category across different profiles, calorie and nutrient constraints, empty results, invalid input, stable ordering, unique meal combinations, constant-feature behavior, dataset validation, and saved-artifact round trips. These checks validate software behavior, not nutritional quality.
 
 ## Files
+
+- `website/`: responsive static website, browser recommendation engine and model snapshot.
 
 - `recommender.py`: reusable validated recommendation logic.
 - `app.py`: interactive terminal interface and CSV export.
