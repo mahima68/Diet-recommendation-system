@@ -6,7 +6,7 @@ A Python portfolio project that retrieves complete breakfast, lunch, dinner, and
 
 [Open the hosted website](https://mahima-diet-planner.mahajanmahima06.chatgpt.site).
 
-The hosted site is currently private to the owner and requires ChatGPT sign-in; it is not yet a public portfolio demo.
+The hosted site is public and can be opened without ChatGPT sign-in.
 
 The browser form accepts age, weight, activity level and dietary preference, with optional calorie targets, calorie tolerance and a dataset condition label. It displays up to five distinct meal plans, includes a sample profile, and exports results as CSV. Profile inputs are processed in the browser and are not saved by the app.
 
